@@ -10,7 +10,7 @@ Conversational AI is any system that interacts with users via natural language i
 
 - Account on [luis.ai](https://www.luis.ai/) site (verify that you can login)
 - [Node](https://nodejs.org/en/) 8+ (make sure you can type 'npm' at the command prompt)
--	[Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36) 3.x (use the *.exe for Windows; use the *-mac.zip for macOS)
+- [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36) 3.x (use the *.exe for Windows; use the *-mac.zip for macOS)
 
 # Setup Instructions
 
@@ -18,7 +18,7 @@ Conversational AI is any system that interacts with users via natural language i
 
    - Create a local working directory which we'll refer to as `<working-dir>` (Example: c:\luisbot)
    - Click **Clone or download** > **Download ZIP**
-   ![download zip](setup/downloadzip-labelled-resized-66.png)
+   ![download zip](screenshots/downloadzip-labelled-resized-66.png)
    - Save and extract the zip into `<working-dir>`
 
 1. Set up LUIS
@@ -28,7 +28,7 @@ Conversational AI is any system that interacts with users via natural language i
    - Type **luisbot** for **Optional Name**
    - Click **Done** > **Train** > **Publish**
    - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section.
-   ![app id and subscription key](setup/appidandsubscriptionkey-labelled-resized-66.png)
+   ![app id and subscription key](screenshots/appidandsubscriptionkey-labelled-resized-66.png)
 
 # Contributing
 
