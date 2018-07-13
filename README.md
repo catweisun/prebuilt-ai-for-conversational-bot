@@ -24,12 +24,32 @@ Conversational AI is any system that interacts with users via natural language i
 1. Set up LUIS
 
    - Navigate to **http://luis.ai/** and sign in
-   - Click **My apps** > **Import new app** > **Browse** and select **`<working-dir>`\prebuilt-aI-for-conversational-bot\projectplanner.json**
-   - Type **luisbot** for **Optional Name**
-   - Click **Done** > **Train** > **Publish**
+   - Click **Import new app**
+   - Click **Browse** and select **`<working-dir>`\prebuilt-aI-for-conversational-bot\projectplanner.json**
+   - Click **Done** > **Train** > **Publish** (use the default Production slot)
    - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section.
    ![app id and subscription key](screenshots/appidandsubscriptionkey-labelled-resized-66.png)
 
+1. Build and start bot
+
+   - Open a command prompt and change the directory to **`<working-dir>`\prebuilt-aI-for-conversational-bot**
+   - Edit **app.js**
+      - Replace **<YOUR-APP-ID>** with your **app id** from above
+      - Replace **<YOUR-SUBSCRIPTION-KEY>** with your **subscription key** from above
+   - Type **npm install**
+   - Type **npm start**
+   
+# Usage
+   
+   - Start emulator and click **File** > **Open Bot**
+   - Select the file **`<working-dir>`\prebuilt-aI-for-conversational-bot\luis-bot-es6.bot**
+   - Type **Show me all docs for Wipro** (Note the top intent of **FindDocForProject**)
+   - Type **Show me all people with Java programming skills** (Note the top intent of **FindPeopleForProject**)
+   - Type **Show me all people who are free from September 2018 to November 2018** (Note the top intent of **FindPeopleForProjectWithTime**)
+   - Type **How are you?** (Note the top intent of **Greeting**)
+   - Type **Help** (Note the top intent of **Help**)
+   - Type **What is the weather like today?** (Note the top intent of **None**)
+      
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
