@@ -34,13 +34,13 @@ Conversational AI is any system that interacts with users via natural language i
 
    - Open a command prompt and change the directory to **`<working-dir>`\prebuilt-aI-for-conversational-bot**
    - Edit **app.js**
-      - Replace **<YOUR-APP-ID>** with your **app id** from above
-      - Replace **<YOUR-SUBSCRIPTION-KEY>** with your **subscription key** from above
+      - Replace **`<YOUR-APP-ID>`** with your **app id** from above
+      - Replace **`<YOUR-SUBSCRIPTION-KEY>`** with your **subscription key** from above
    - Type **npm install**
    - Type **npm start**
-   
+
 # Usage
-   
+
    - Start emulator and click **File** > **Open Bot**
    - Select the file **`<working-dir>`\prebuilt-aI-for-conversational-bot\luis-bot-es6.bot**
    - Type **Show me all docs for Wipro** (Note the top intent of **FindDocForProject**)
@@ -49,7 +49,7 @@ Conversational AI is any system that interacts with users via natural language i
    - Type **How are you?** (Note the top intent of **Greeting**)
    - Type **Help** (Note the top intent of **Help**)
    - Type **What is the weather like today?** (Note the top intent of **None**)
-      
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
