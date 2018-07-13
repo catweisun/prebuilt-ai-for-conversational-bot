@@ -1,0 +1,756 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "0.1",
+  "name": "projectplanner",
+  "desc": "Default Intents for Azure Bot Service V2",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Cancel"
+    },
+    {
+      "name": "FindDocForProject"
+    },
+    {
+      "name": "FindPeopleForProject"
+    },
+    {
+      "name": "FinePeopleForProjectWithTime"
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "project",
+      "roles": []
+    },
+    {
+      "name": "skill",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "cloudskill",
+      "subLists": [
+        {
+          "canonicalForm": "Azure Search",
+          "list": []
+        },
+        {
+          "canonicalForm": "Bing Spell Check API",
+          "list": []
+        },
+        {
+          "canonicalForm": "Azure Machine Learning",
+          "list": [
+            "AML",
+            "Azure ML"
+          ]
+        },
+        {
+          "canonicalForm": "Microsoft Machine Learning Server",
+          "list": [
+            "R Server"
+          ]
+        },
+        {
+          "canonicalForm": "Azure HDInsight",
+          "list": [
+            "hdi"
+          ]
+        },
+        {
+          "canonicalForm": "Bot Framework",
+          "list": [
+            "botframework"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "comparison",
+      "subLists": [
+        {
+          "canonicalForm": "more than",
+          "list": []
+        },
+        {
+          "canonicalForm": "less than",
+          "list": [
+            "less than"
+          ]
+        },
+        {
+          "canonicalForm": "equal to",
+          "list": []
+        },
+        {
+          "canonicalForm": "no less than",
+          "list": [
+            "more than or equal to",
+            "equal to or more than"
+          ]
+        },
+        {
+          "canonicalForm": "no more than",
+          "list": [
+            "equal to or less than",
+            "less than or equal to"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [
+    {
+      "name": "customer",
+      "explicitList": [],
+      "roles": []
+    }
+  ],
+  "regex_entities": [],
+  "prebuiltEntities": [
+    {
+      "name": "age",
+      "roles": []
+    },
+    {
+      "name": "datetimeV2",
+      "roles": []
+    },
+    {
+      "name": "number",
+      "roles": []
+    }
+  ],
+  "model_features": [
+    {
+      "name": "skills",
+      "mode": false,
+      "words": "java,python,spark,javascript,c,.net",
+      "activated": true
+    },
+    {
+      "name": "find",
+      "mode": true,
+      "words": "find,provide,offer",
+      "activated": true
+    },
+    {
+      "name": "project",
+      "mode": false,
+      "words": "wipro,p&g demo,wipro bot,kpmg auditing,jabil ciruit board,accenture aip,walmart,kpmg,audi,costco,bestbuy",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "abort",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "disregard",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "do not do it",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "do not do that",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "don't",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "don't do it",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "don't do that",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "find me all docs for project sbc training",
+      "intent": "FindDocForProject",
+      "entities": [
+        {
+          "entity": "project",
+          "startPos": 29,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "find me all documents for project wipro",
+      "intent": "FindDocForProject",
+      "entities": [
+        {
+          "entity": "project",
+          "startPos": 34,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "find me docs for wipro",
+      "intent": "FindDocForProject",
+      "entities": [
+        {
+          "entity": "project",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "find me documents for project p&g demo",
+      "intent": "FindDocForProject",
+      "entities": [
+        {
+          "entity": "project",
+          "startPos": 30,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "find me documents for wipro",
+      "intent": "FindDocForProject",
+      "entities": [
+        {
+          "entity": "project",
+          "startPos": 22,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "find me people who knows azure search and free in april",
+      "intent": "FinePeopleForProjectWithTime",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 25,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "find me people with skill hdi",
+      "intent": "FindPeopleForProject",
+      "entities": []
+    },
+    {
+      "text": "find me people with skill java and spark",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 26,
+          "endPos": 29
+        },
+        {
+          "entity": "skill",
+          "startPos": 35,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "find me people with skill python and spark",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 26,
+          "endPos": 31
+        },
+        {
+          "entity": "skill",
+          "startPos": 37,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "find me people with skills spark and python and also free between april 1st, 2018 to may 30th, 2018",
+      "intent": "FinePeopleForProjectWithTime",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 27,
+          "endPos": 31
+        },
+        {
+          "entity": "skill",
+          "startPos": 37,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "give me a list of documents for project wipro",
+      "intent": "FindDocForProject",
+      "entities": [
+        {
+          "entity": "project",
+          "startPos": 40,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "give me a list of people who are free from april 1st, 2018 to april 2nd 2018",
+      "intent": "FinePeopleForProjectWithTime",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good night",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello bot",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me please",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help please",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi bot",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hiya",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you doing today?",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you doing?",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how are you today?",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how to get to building 33?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i am stuck",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "i have a project which requires skills bot framework and javascript, who can i put on this project?",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 57,
+          "endPos": 66
+        }
+      ]
+    },
+    {
+      "text": "i want people who knows python, java, and botframework on a project",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 24,
+          "endPos": 29
+        },
+        {
+          "entity": "skill",
+          "startPos": 32,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "i want to find people for project which requires skill bot framework and javascript",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 73,
+          "endPos": 82
+        }
+      ]
+    },
+    {
+      "text": "i want to find people with python and java",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 27,
+          "endPos": 32
+        },
+        {
+          "entity": "skill",
+          "startPos": 38,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "i want to find people with skill java and spark",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 33,
+          "endPos": 36
+        },
+        {
+          "entity": "skill",
+          "startPos": 42,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "i want to find people with skill spark and python for a project.",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 33,
+          "endPos": 37
+        },
+        {
+          "entity": "skill",
+          "startPos": 43,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "i want to find people with skills java and spark",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 34,
+          "endPos": 37
+        },
+        {
+          "entity": "skill",
+          "startPos": 43,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "i want to find people with skills spark and java",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 34,
+          "endPos": 38
+        },
+        {
+          "entity": "skill",
+          "startPos": 44,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "i would like to cancel",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "i'm stuck",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "my water bottle is green.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "never mind",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "please cancel",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "please disregard",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "please help me",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "please stop",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "stop",
+      "intent": "Cancel",
+      "entities": []
+    },
+    {
+      "text": "there is a large deep dish pizza in your future.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what can i say",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can you do",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can you help me with",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what do i do now?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what do i do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what is the weather?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who can i put on a project which requires spark, python, and dw?",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 42,
+          "endPos": 46
+        },
+        {
+          "entity": "skill",
+          "startPos": 49,
+          "endPos": 54
+        },
+        {
+          "entity": "skill",
+          "startPos": 61,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "who can i talk to in terms of skills java and python?",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 37,
+          "endPos": 40
+        },
+        {
+          "entity": "skill",
+          "startPos": 46,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "who has skills bot framework and azure search",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 15,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "who has skills in azure machine learning?",
+      "intent": "FindPeopleForProject",
+      "entities": []
+    },
+    {
+      "text": "who has skills in azure search?",
+      "intent": "FindPeopleForProject",
+      "entities": []
+    },
+    {
+      "text": "who has skills in botframework?",
+      "intent": "FindPeopleForProject",
+      "entities": []
+    },
+    {
+      "text": "who has skills with java?",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 20,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "who has the skill of azure machine learning?",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 21,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "who have skills python and spark?",
+      "intent": "FindPeopleForProject",
+      "entities": [
+        {
+          "entity": "skill",
+          "startPos": 16,
+          "endPos": 21
+        },
+        {
+          "entity": "skill",
+          "startPos": 27,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "who is free in september?",
+      "intent": "FinePeopleForProjectWithTime",
+      "entities": []
+    },
+    {
+      "text": "who is james bond?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who knows azure hdinsight?",
+      "intent": "FindPeopleForProject",
+      "entities": []
+    },
+    {
+      "text": "who knows bot framework and is available in august?",
+      "intent": "FinePeopleForProjectWithTime",
+      "entities": []
+    },
+    {
+      "text": "why doesn't this work ?",
+      "intent": "Help",
+      "entities": []
+    }
+  ]
+}

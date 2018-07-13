@@ -1,3 +1,34 @@
+# Summary
+
+Learn to quickly stand up a project-planning chat bot that uses LUIS for natural language understanding.
+
+# Abstract
+
+Conversational AI is any system that interacts with users via natural language inputs. Compared to traditional menu-driven bots, conversational AI is incredibly complex and relies on sophisticated Natural Language Processing (NLP) algorithms to derive understanding about what a user wants to do, and what things the user is talking about. This tutorial will guide you through the training and use of a Microsoft LUIS (Language Understanding Intelligent System) model that can understand user intent (what the user wants to do) and entities (names, places, things). You will use your trained model in the context of a text bot, built on the Microsoft Bot Framework, that can intelligently respond to user queries, given a small set of sample training data.
+
+# Prerequisites
+
+- Account on [luis.ai](https://www.luis.ai/) site (verify that you can login)
+- [Node](https://nodejs.org/en/) 8+ (make sure you can type 'npm' at the command prompt)
+-	[Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36) 3.x (use the *.exe for Windows; use the *-mac.zip for macOS)
+
+# Setup Instructions
+
+1. Download repo contents
+
+   - Create a local working directory which we'll refer to as `<working-dir>` (Example: c:\luisbot)
+   - Click **Clone or download** > **Download ZIP**
+   ![download zip](setup/downloadzip-labelled-resized-66.png)
+   - Save and extract the zip into `<working-dir>`
+
+1. Set up LUIS
+
+   - Navigate to **http://luis.ai/** and sign in
+   - Click **My apps** > **Import new app** > **Browse** and select **`<working-dir>`\prebuilt-aI-for-conversational-bot\projectplanner.json**
+   - Type **luisbot** for **Optional Name**
+   - Click **Done** > **Train** > **Publish**
+   - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section.
+   ![app id and subscription key](setup/appidandsubscriptionkey-labelled-resized-66.png)
 
 # Contributing
 
