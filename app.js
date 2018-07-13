@@ -20,10 +20,8 @@ const _ = require('lodash');
 
 const { LuisRecognizer } = require('botbuilder-ai');
 
-//const appId = 'b34b5b00-c8b3-422e-93cd-17894667426d';
-const appId = 'be9215aa-019a-4774-8242-5ab6575374eb';
-//const subscriptionKey = 'dc626873ccfd4e15b54bfef95a8012d9';
-const subscriptionKey = 'f7b9d22699cc405b941672a7db2d6182';
+const appId = '<YOUR-APP-ID>';
+const subscriptionKey = '<YOUR-SUBSCRIPTION-ID>';
 // Default is westus
 const serviceEndpoint = 'https://westus.api.cognitive.microsoft.com';
 
