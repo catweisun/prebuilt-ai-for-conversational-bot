@@ -1,16 +1,17 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-const { BotFrameworkAdapter, MemoryStorage, TurnContext, ConversationState } = require('botbuilder');
+//const { BotFrameworkAdapter, MemoryStorage, TurnContext, ConversationState } = require('botbuilder');
+const { BotFrameworkAdapter, MemoryStorage } = require('botbuilder');
 const {
     DialogSet,
-    TextPrompt,
-    ChoicePrompt,
-    ConfirmPrompt,
-    DatetimePrompt,
-    FoundChoice,
-    FoundDatetime,
-    ListStyle
+    //TextPrompt,
+    //ChoicePrompt,
+    //ConfirmPrompt,
+    //DatetimePrompt,
+    //FoundChoice,
+    //FoundDatetime,
+    //ListStyle
 } = require('botbuilder-dialogs');
 const BotStateManager = require('./botStateManager');
 
@@ -22,6 +23,7 @@ const { LuisRecognizer } = require('botbuilder-ai');
 
 const appId = '<YOUR-APP-ID>';
 const subscriptionKey = '<YOUR-SUBSCRIPTION-KEY>';
+
 // Default is westus
 const serviceEndpoint = 'https://westus.api.cognitive.microsoft.com';
 
@@ -53,7 +55,7 @@ server.post('/api/messages', (req, res) => {
     adapter.processActivity(req, res, async context => {
         if (context.activity.type === 'conversationUpdate' && context.activity.membersAdded[0].name === 'Bot') {
             // Welcome message here, bot will message you first
-            await context.sendActivity(`Hiiiiii! I'm a simple reminder bot. I can help add reminders, delete and show them.`);
+            await context.sendActivity(`Hello! I'm a simple project planning bot for the AzureCAT WWAH. I'll show you the top scoring intent, confidence score, and entities for what you type.`);
         } else if (context.activity.type === 'message') {
             const utterance = (context.activity.text || '').trim().toLowerCase();
             console.log('utterance:' + utterance);
@@ -61,91 +63,139 @@ server.post('/api/messages', (req, res) => {
             // Create dialog context
             const dc = dialogs.createContext(context, state);
 
+            let topIntent = "undefined";
+            let topIntentScore = "undefined";
+            let entities = "undefined";
+
             // Call LUIS model
             await model
                 .recognize(context)
                 .then(res => {
-                    console.log('1');
                     // Resolve intents returned from LUIS
-                    let topIntent = LuisRecognizer.topIntent(res);
-                    console.log('topIntent:' + topIntent);
+                    topIntent = LuisRecognizer.topIntent(res);
+                    console.log('topIntent: ' + topIntent);
+                    topIntentScore = res.intents[topIntent].score
+                    console.log('topIntentScore: ' + topIntentScore);
+
+                    //console.log('entities: ' + res.entities[0].join());
+                    //res.entities.
+
+                    //entities = values(res.entities).join()
+                    //entities = '**' + _.values(res.entities).join('**,**') + '**';
+                    entities = _.values(res.entities);
+                    console.log('entities: ' + entities);
+
+
+                    //console.log('entities: ' + res.entities.join());
+
+                    //let entities = res.entities;
+                    //console.log('entities: ' + entities);
+                    //console.log('entities: ' + entities.join());
+
+                    //res.luisResult
+                    //luisResult.entities.luisResult.intents
+                    //console.log('entities:' + luisResult.entities.luisResult.intents);
+                    //luisResult.entities.luisResult.entities
+                    //res.luisResult.topIntent.
+                    //res.entities
+                    //res.topIntent.
+                    
+                    //LuisRecognizer.recognize(res,model, (err,intents,entities)=>{
+                    //    if(err){
+                    //        console.log("Some error occurred in calling LUIS");
+                    //    }
+                    //    console.log(intents);
+                    //    console.log("==================");
+                    //    console.log(entities);
+                //});
+
+                    //await context.sendActivity(`${count}: You said "${context.activity.text}"`);
+                    //context.sendActivity("woof");
 
                     state.intent = topIntent;
 
                     // Start addReminder dialog
-                    if (topIntent === 'Calendar.Add') {
-                        console.log('a');
+                    //if (topIntent === 'Calendar.Add') {
+                    //if (topIntent === 'Cancel') {
+                     //   console.log('a');
                         // Resolve entities returned from LUIS, and save these to state
-                        let title = state.title = res.entities['Calendar.Subject'];
-                        let date = res.entities.builtin_datetimeV2_date;
-                        let time = res.entities.builtin_datetimeV2_time;
-                        let datetime = res.entities.builtin_datetimeV2_datetime;
+                     //   let title = state.title = res.entities['Calendar.Subject'];
+                     //   let date = res.entities.builtin_datetimeV2_date;
+                     //   let time = res.entities.builtin_datetimeV2_time;
+                     //   let datetime = res.entities.builtin_datetimeV2_datetime;
                         // TODO: The datetime parsing below should be 
                         // updated to use TIMEX parsing instead of moment parsing
-                        if (datetime) {
-                            let dtvalue = datetime[0];
-                            state.date = moment(dtvalue).format('DD-MM-YYYY');
-                            state.time = moment(dtvalue).format('hh:mm a');
-                        } else if (date) {
-                            let datevalue = date[0];
-                            state.date = moment(datevalue).format('DD-MM-YYYY');
-                        } else if (time) {
-                            let timevalue = time[0];
+                     //   if (datetime) {
+                     //       let dtvalue = datetime[0];
+                     //       state.date = moment(dtvalue).format('DD-MM-YYYY');
+                     //       state.time = moment(dtvalue).format('hh:mm a');
+                     //   } else if (date) {
+                     //       let datevalue = date[0];
+                     //       state.date = moment(datevalue).format('DD-MM-YYYY');
+                     //   } else if (time) {
+                     //       let timevalue = time[0];
                             // Assume user is talking about today
-                            let datetime = moment(timevalue, 'hh:mm a');
-                            state.date = datetime.format('DD-MM-YYYY');
-                            state.time = datetime.format('hh:mm a');
-                        }
+                     //       let datetime = moment(timevalue, 'hh:mm a');
+                     //       state.date = datetime.format('DD-MM-YYYY');
+                     //       state.time = datetime.format('hh:mm a');
+                      //  }
 
-                        console.log('2');
-                        let reminder = (state.reminder = {
-                            title: title ? title.entity : null,
-                            date: state.date ? state.date : null,
-                            time: state.time ? state.time : null
-                        });
+                       // console.log('2');
+                        //let reminder = (state.reminder = {
+                        //    title: title ? title.entity : null,
+                        //    date: state.date ? state.date : null,
+                        //    time: state.time ? state.time : null
+                        //});
 
-                        console.log('3');
-                        return dc.begin('addReminder');
+                        //console.log('3');
+                        //return dc.begin('addReminder');
 
                         // Start deleteReminder dialog
-                    } else if (topIntent === 'Calendar.Delete') {
-                        return dc.begin('deleteReminder');
+                    //} else if (topIntent === 'Calendar.Delete') {
+                    //    return dc.begin('deleteReminder');
 
                         // Start showReminders
-                    } else if (topIntent === 'Calendar.Find') {
-                        return dc.begin('showReminders');
+                    //} else if (topIntent === 'Calendar.Find') {
+                    //    return dc.begin('showReminders');
 
                         // Check for cancel
-                    } else if (utterance === 'cancel') {
-                        if (dc.instance) {
+                    //} else if (utterance === 'cancel') {
+                     //   if (dc.instance) {
                             //await context.sendActivity(`Ok... Cancelled.`).then(res => {
                             //    dc.endAll();
                             //});
-                        } else {
+                      //  } else {
                             //await context.sendActivity(`Nothing to cancel.`);
-                        }
+                       // }
 
                         // Continue current dialog
-                    } else {
-                        return dc.continue().then(res => {
+                    //} else {
+                        //return dc.continue().then(res => {
                             // Return default message if nothing replied.
-                            if (!context.responded) {
+                          //  if (!context.responded) {
                                 //await context.sendActivity(
                                 //    `Hi! I'm a simple reminder bot. I can help add reminders, delete and show them.`
                                 //);
-                            }
-                        });
-                    }
+                           // }
+                      //  });
+                    //}
                 })
                 .catch(err => {
                     console.log(err);
                 });
+
+            let response = 'top intent: **' + topIntent + '**\n';
+            response += 'confidence score: **' + topIntentScore + '**\n';
+            response += 'entities: **' + entities + '**';
+
+            await context.sendActivity(response);
         }
     });
 });
 
 const dialogs = new DialogSet();
 
+/*
 //-----------------------------------------------
 // Add Reminder
 //-----------------------------------------------
@@ -315,3 +365,4 @@ dialogs.add('showReminders', [
         await dc.end();
     }
 ]);
+*/
