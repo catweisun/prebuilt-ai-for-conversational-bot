@@ -43,12 +43,30 @@ Conversational AI is any system that interacts with users via natural language i
 
    - Start emulator and click **File** > **Open Bot**
    - Select the file **`<working-dir>`\prebuilt-aI-for-conversational-bot\luis-bot-es6.bot**
-   - Type **Show me all docs for Wipro** (Note the top intent of **FindDocForProject**)
-   - Type **Show me all people with Java programming skills** (Note the top intent of **FindPeopleForProject**)
-   - Type **Show me all people who are free from September 2018 to November 2018** (Note the top intent of **FindPeopleForProjectWithTime**)
-   - Type **How are you?** (Note the top intent of **Greeting**)
-   - Type **Help** (Note the top intent of **Help**)
-   - Type **What is the weather like today?** (Note the top intent of **None**)
+   - Type **Show me all docs for Wipro**
+      > top intent: **FindDocForProject**<br>
+      > confidence score: **0.778712034**<br>
+      > entities: **wipro**
+   - Type **Show me all people with Java programming skills**
+      > top intent: **FindPeopleForProject**<br>
+      > confidence score: **0.9460936**<br>
+      > entities: **java**
+   - Type **Show me all people who are free from September 2018 to November 2018**
+      > top intent: **FinePeopleForProjectWithTime**<br>
+      > confidence score: **0.932118058**<br>
+      > entities: **(2018-09-01,2018-11-01,P2M),2018,2018**
+   - Type **How are you?**
+      > top intent: **Greeting**<br>
+      > confidence score: **0.936847568**<br>
+      > entities:
+   - Type **Help**
+      > top intent: **Help**<br>
+      > confidence score: **0.9752868**<br>
+      > entities:
+   - Type **What is the weather like today?**
+      > top intent: **None**<br>
+      > confidence score: **0.57235**<br>
+      > entities: **2018-07-16**
 
 # Contributing
 
