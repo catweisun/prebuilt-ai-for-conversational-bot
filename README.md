@@ -8,7 +8,7 @@ Conversational AI is any system that interacts with users via natural language i
 
 # Prerequisites
 
-- Account on [luis.ai](https://www.luis.ai/) site (verify that you can login)
+- Account on [luis.ai](https://www.luis.ai/) site (verify that you can login using your Microsoft account)
 - [Node](https://nodejs.org/en/) 8+ (make sure you can type 'npm' at the command prompt)
 - [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36) 3.x (use the *.exe for Windows; use the *-mac.zip for macOS)
 
@@ -23,7 +23,7 @@ Conversational AI is any system that interacts with users via natural language i
 
    - Save and extract the zip into `<working-dir>`
 
-   > If you have Git, you can clone the repo using the command **git clone https://github.com/Azure/prebuilt-aI-for-conversational-bot.git**
+   > If you have Git, you can clone the repo using the command `git clone https://github.com/Azure/prebuilt-aI-for-conversational-bot.git`
 
 1. Set up LUIS
 
