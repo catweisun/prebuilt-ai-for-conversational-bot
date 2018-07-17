@@ -16,9 +16,11 @@ Conversational AI is any system that interacts with users via natural language i
 
 1. Download repo contents
 
-   - Create a local working directory which we'll refer to as `<working-dir>` (Example: c:\luisbot)
+   - Create a local working directory which we'll refer to as `<working-dir>`
    - Click **Clone or download** > **Download ZIP**
-   ![download zip](screenshots/downloadzip-labelled-resized-66.png)
+
+      ![download zip](screenshots/downloadzip-labelled-resized-66.png)
+      
    - Save and extract the zip into `<working-dir>`
 
 1. Set up LUIS
@@ -29,7 +31,8 @@ Conversational AI is any system that interacts with users via natural language i
    - Type a name for your app - please don't use the default "projectplanner"
    - Click **Done** > **Train** > **Publish** (use the default Production slot)
    - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section. For example:
-   ![app id and subscription key](screenshots/appidandsubscriptionkey-labelled-resized-66.png)
+
+      ![app id and subscription key](screenshots/appidandsubscriptionkey-labelled-resized-66.png)
 
 1. Build and start bot
 
