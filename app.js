@@ -7,8 +7,8 @@ const { LuisRecognizer } = require('botbuilder-ai');
 
 const { GREETING, EXAMPLES } = require('./text');
 
-const luisAppId = '1f3f8db7-5f52-45d2-b92b-b429e5b59c4d';
-const luisSubscriptionKey = '391d355fa11641e4bb6a34d65372f577';
+const luisAppId = '<YOUR-APP-ID>';
+const luisSubscriptionKey = '<YOUR-SUBSCRIPTION-KEY>';
 const port = process.env.port || process.env.PORT || 3978;
 const luisServiceEndpoint = 'https://westus.api.cognitive.microsoft.com';
 
