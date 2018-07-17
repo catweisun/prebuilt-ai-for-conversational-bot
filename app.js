@@ -5,7 +5,7 @@ const { BotFrameworkAdapter, MemoryStorage } = require('botbuilder');
 const { DialogSet } = require('botbuilder-dialogs');
 const BotStateManager = require('./botStateManager');
 
-const restify = require('restify');
+var express = require('express')
 const moment = require('moment');
 const _ = require('lodash');
 
@@ -24,9 +24,10 @@ const model = new LuisRecognizer({
 });
 
 // Create server
-let server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function() {
-    console.log(`${server.name} listening to ${server.url}`);
+let server = express();
+let port = process.env.port || process.env.PORT || 3978;
+server.listen(port, function() {
+    console.log(`${server.name} listening on ${port}`);
 });
 
 // Create adapter
