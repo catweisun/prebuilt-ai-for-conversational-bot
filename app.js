@@ -41,15 +41,17 @@ const botLogic = async (context) => {
         const luisResult = await model.recognize(context);
         const topIntent = LuisRecognizer.topIntent(luisResult);
         const topIntentScore = luisResult.intents[topIntent].score;
-        const entities = Object.values(luisResult.entities)
-            .map((x) => x[0])
-            .map((x) => x.type === 'daterange' || x.type === 'date' ? x.timex[0] : x);
-        console.log(`entities: ${entities}`);
+        const entities = [];
+        for (const type in luisResult.entities) {
+            const values = luisResult.entities[type]
+                .map((x) => x.type === 'daterange' || x.type === 'date' ? x.timex : x);
+            entities.push(`**${type}**=${values.join(', ')}`);
+        }
 
         const response = [
             `top intent: **${topIntent || 'n/a'}**`,
             `confidence score: **${topIntentScore || 'n/a'}**`,
-            `entities: **${entities.join(', ') || 'n/a'}**`,
+            `entities: ${entities.join('; ') || 'n/a'}`,
         ].join('\n');
         await context.sendActivity(response);
     }
