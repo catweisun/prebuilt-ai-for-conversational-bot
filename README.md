@@ -25,15 +25,16 @@ Conversational AI is any system that interacts with users via natural language i
 
    - Navigate to **http://luis.ai/** and sign in
    - Click **Import new app**
-   - Click **Browse** and select **`<working-dir>`\prebuilt-aI-for-conversational-bot\projectplanner.json**
+   - Click **Browse** and select **`<working-dir>`\prebuilt-aI-for-conversational-bot\projectplanner.json** for App JSON file
+   - Type a name for your app - please don't use the default "projectplanner"
    - Click **Done** > **Train** > **Publish** (use the default Production slot)
-   - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section.
+   - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section. For example:
    ![app id and subscription key](screenshots/appidandsubscriptionkey-labelled-resized-66.png)
 
 1. Build and start bot
 
    - Open a command prompt and change the directory to **`<working-dir>`\prebuilt-aI-for-conversational-bot**
-   - Edit **app.js**
+   - Edit **app.js** using your favorite editor or IDE
       - Replace **`<YOUR-APP-ID>`** with your **app id** from above
       - Replace **`<YOUR-SUBSCRIPTION-KEY>`** with your **subscription key** from above
    - Type **npm install**
