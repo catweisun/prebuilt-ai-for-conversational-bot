@@ -28,7 +28,7 @@ const adapter = new BotFrameworkAdapter({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-// Proceesor for every conversation turn
+// Handler for every conversation turn
 const botLogic = async (context) => {
     if (context.activity.type === ActivityTypes.ConversationUpdate && context.activity.membersAdded[0].name === 'Bot') {
         // Welcome message here, bot will message you first
