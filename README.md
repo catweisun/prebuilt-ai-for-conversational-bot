@@ -8,9 +8,9 @@ Conversational AI is any system that interacts with users via natural language i
 
 # Prerequisites
 
-- Account on [luis.ai](https://www.luis.ai/) site (verify that you can login)
+- Account on [luis.ai](https://www.luis.ai/) site (verify that you can login using your Microsoft account)
 - [Node](https://nodejs.org/en/) 8+ (make sure you can type 'npm' at the command prompt)
-- [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.36) 3.x (use the *.exe for Windows; use the *-mac.zip for macOS)
+- [Bot Framework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v4.0.15-alpha) 4.x (use the *.exe for Windows; use the *-mac.zip for macOS)
 
 # Setup Instructions
 
@@ -20,8 +20,10 @@ Conversational AI is any system that interacts with users via natural language i
    - Click **Clone or download** > **Download ZIP**
 
       ![download zip](screenshots/downloadzip-labelled-resized-66.png)
-      
+
    - Save and extract the zip into `<working-dir>`
+
+   > If you have Git, you can clone the repo using the command `git clone https://github.com/Azure/prebuilt-aI-for-conversational-bot.git`
 
 1. Set up LUIS
 
@@ -29,7 +31,9 @@ Conversational AI is any system that interacts with users via natural language i
    - Click **Import new app**
    - Click **Browse** and select **`<working-dir>`\prebuilt-aI-for-conversational-bot\projectplanner.json** for App JSON file
    - Type a name for your app - please don't use the default "projectplanner"
-   - Click **Done** > **Train** > **Publish** (use the default Production slot)
+   - Click **Done**
+   - Click **Train** on the upper-right
+   - Click **Publish** on the upper-right, select the **Production**, and click **Publish**
    - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section. For example:
 
       ![app id and subscription key](screenshots/appidandsubscriptionkey-labelled-resized-66.png)
@@ -38,11 +42,11 @@ Conversational AI is any system that interacts with users via natural language i
 
    - Open a command prompt and change the directory to **`<working-dir>`\prebuilt-aI-for-conversational-bot**
    - Edit **app.js** using your favorite editor or IDE
-      - Replace **`<YOUR-APP-ID>`** with your **app id** from above
-      - Replace **`<YOUR-SUBSCRIPTION-KEY>`** with your **subscription key** from above
-   - Type **npm install**
-   - Type **npm start**
-   
+      - Replace `<YOUR-APP-ID>` with your **app id** from above
+      - Replace `<YOUR-SUBSCRIPTION-KEY>` with your **subscription key** from above
+   - Type `npm install`
+   - Type `npm start`
+
 1. Start emulator
 
    - Start emulator and select the menu options **File** > **Open Bot**
