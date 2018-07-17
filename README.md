@@ -20,8 +20,10 @@ Conversational AI is any system that interacts with users via natural language i
    - Click **Clone or download** > **Download ZIP**
 
       ![download zip](screenshots/downloadzip-labelled-resized-66.png)
-      
+
    - Save and extract the zip into `<working-dir>`
+
+   > If you have Git, you can clone the repo using the command **git clone https://github.com/Azure/prebuilt-aI-for-conversational-bot.git**
 
 1. Set up LUIS
 
@@ -42,7 +44,7 @@ Conversational AI is any system that interacts with users via natural language i
       - Replace **`<YOUR-SUBSCRIPTION-KEY>`** with your **subscription key** from above
    - Type **npm install**
    - Type **npm start**
-   
+
 1. Start emulator
 
    - Start emulator and select the menu options **File** > **Open Bot**
