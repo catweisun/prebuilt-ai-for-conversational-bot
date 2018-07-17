@@ -42,11 +42,14 @@ Conversational AI is any system that interacts with users via natural language i
       - Replace **`<YOUR-SUBSCRIPTION-KEY>`** with your **subscription key** from above
    - Type **npm install**
    - Type **npm start**
+   
+1. Start emulator
+
+   - Start emulator and select the menu options **File** > **Open Bot**
+   - Select the file **`<working-dir>`\prebuilt-aI-for-conversational-bot\luis-bot-es6.bot**
 
 # Usage
 
-   - Start emulator and click **File** > **Open Bot**
-   - Select the file **`<working-dir>`\prebuilt-aI-for-conversational-bot\luis-bot-es6.bot**
    - Type **Show me all docs for Wipro**
       > top intent: **FindDocForProject**<br>
       > confidence score: **0.778712034**<br>
