@@ -1,7 +1,7 @@
 {
-  "name": "luis-alarmbot-es6",
+  "name": "luis-bot-es6",
   "version": "1.0.0",
-  "description": "Bot Builder example showing use of LUIS for a reminder bot",
+  "description": "Bot Builder example showing use of LUIS for a bot",
   "main": "app.js",
   "scripts": {
     "start": "node app"
@@ -9,10 +9,8 @@
   "author": "Microsoft",
   "license": "ISC",
   "dependencies": {
-    "botbuilder": "^4.0.0-m4.1",
-    "botbuilder-ai": "^4.0.0-m4.1",
-    "botbuilder-dialogs": "^4.0.0-m4.1",
-    "express": "^4.16.3",
-    "lodash": "^4.17.5"
+    "botbuilder": "^4.0.0-preview1.2",
+    "botbuilder-ai": "^4.0.0-preview1.2",
+    "express": "^4.16.3"
   }
 }
