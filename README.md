@@ -41,7 +41,7 @@ Conversational AI is any system that interacts with users via natural language i
 1. Build and start bot
 
    - Open a command prompt and change the directory to **`<working-dir>`\prebuilt-aI-for-conversational-bot**
-   - Edit **app.js** using your favorite editor or IDE
+   - Edit **.env** using your favorite editor or IDE
       - Replace `<YOUR-APP-ID>` with your **app id** from above
       - Replace `<YOUR-SUBSCRIPTION-KEY>` with your **subscription key** from above
    - Type `npm install`
