@@ -33,7 +33,7 @@ Conversational AI is any system that interacts with users via natural language i
    - Type a name for your app - please don't use the default "projectplanner"
    - Click **Done**
    - Click **Train** on the upper-right
-   - Click **Publish** on the upper-right, select the **Production**, and click **Publish**
+   - Click **Publish** on the upper-right, select the **Production** slot, and click **Publish**
    - Scroll down to view the endpoint and make a note of the **app id** and **subscription key**. You will need them in the next section. For example:
 
       ![app id and subscription key](screenshots/appidandsubscriptionkey-labelled-resized-66.png)
