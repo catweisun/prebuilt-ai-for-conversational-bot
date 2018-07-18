@@ -65,9 +65,7 @@
         },
         {
           "canonicalForm": "Azure HDInsight",
-          "list": [
-            "hdi"
-          ]
+          "list": []
         },
         {
           "canonicalForm": "Bot Framework",
@@ -263,11 +261,6 @@
           "endPos": 29
         }
       ]
-    },
-    {
-      "text": "find me people with skill hdi",
-      "intent": "FindPeopleForProject",
-      "entities": []
     },
     {
       "text": "find me people with skill java and spark",
