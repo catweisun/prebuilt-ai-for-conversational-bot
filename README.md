@@ -57,27 +57,27 @@ Conversational AI is any system that interacts with users via natural language i
    - Type **Show me all docs for Wipro**
       > top intent: **FindDocForProject**<br>
       > confidence score: **0.778712034**<br>
-      > entities: **wipro**
+      > entities: **project**=wipro
    - Type **Show me all people with Java programming skills**
       > top intent: **FindPeopleForProject**<br>
-      > confidence score: **0.9460936**<br>
-      > entities: **java**
+      > confidence score: **0.9460903**<br>
+      > entities: **skill**=java
    - Type **Show me all people who are free from September 2018 to November 2018**
-      > top intent: **FinePeopleForProjectWithTime**<br>
-      > confidence score: **0.932118058**<br>
-      > entities: **(2018-09-01,2018-11-01,P2M),2018,2018**
+      > top intent: **FindPeopleForProjectWithTime**<br>
+      > confidence score: **0.9321173**<br>
+      > entities: **datetime**=(2018-09-01,2018-11-01,P2M); **number**=2018, 2018
    - Type **How are you?**
       > top intent: **Greeting**<br>
-      > confidence score: **0.936847568**<br>
-      > entities:
+      > confidence score: **0.9368477**<br>
+      > entities: n/a
    - Type **Help**
       > top intent: **Help**<br>
-      > confidence score: **0.9752868**<br>
-      > entities:
+      > confidence score: **0.9752869**<br>
+      > entities: n/a
    - Type **What is the weather like today?**
       > top intent: **None**<br>
-      > confidence score: **0.57235**<br>
-      > entities: **2018-07-16**
+      > confidence score: **0.572350144**<br>
+      > entities: **datetime**=2018-07-18
 
 # Contributing
 
