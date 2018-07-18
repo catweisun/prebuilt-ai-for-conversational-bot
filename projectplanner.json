@@ -15,7 +15,7 @@
       "name": "FindPeopleForProject"
     },
     {
-      "name": "FinePeopleForProjectWithTime"
+      "name": "FindPeopleForProjectWithTime"
     },
     {
       "name": "Greeting"
@@ -255,7 +255,7 @@
     },
     {
       "text": "find me people who knows azure search and free in april",
-      "intent": "FinePeopleForProjectWithTime",
+      "intent": "FindPeopleForProjectWithTime",
       "entities": [
         {
           "entity": "skill",
@@ -303,7 +303,7 @@
     },
     {
       "text": "find me people with skills spark and python and also free between april 1st, 2018 to may 30th, 2018",
-      "intent": "FinePeopleForProjectWithTime",
+      "intent": "FindPeopleForProjectWithTime",
       "entities": [
         {
           "entity": "skill",
@@ -330,7 +330,7 @@
     },
     {
       "text": "give me a list of people who are free from april 1st, 2018 to april 2nd 2018",
-      "intent": "FinePeopleForProjectWithTime",
+      "intent": "FindPeopleForProjectWithTime",
       "entities": []
     },
     {
@@ -729,7 +729,7 @@
     },
     {
       "text": "who is free in september?",
-      "intent": "FinePeopleForProjectWithTime",
+      "intent": "FindPeopleForProjectWithTime",
       "entities": []
     },
     {
@@ -744,7 +744,7 @@
     },
     {
       "text": "who knows bot framework and is available in august?",
-      "intent": "FinePeopleForProjectWithTime",
+      "intent": "FindPeopleForProjectWithTime",
       "entities": []
     },
     {
