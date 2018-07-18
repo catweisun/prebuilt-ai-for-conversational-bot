@@ -6,8 +6,12 @@
   "scripts": {
     "start": "node app"
   },
+  "repository": {
+    "url": "https://github.com/Azure/prebuilt-ai-for-conversational-bot.git",
+    "type": "git"
+  },
   "author": "Microsoft",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "botbuilder": "^4.0.0-preview1.2",
     "botbuilder-ai": "^4.0.0-preview1.2",
