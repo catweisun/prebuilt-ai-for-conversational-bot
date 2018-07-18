@@ -15,6 +15,7 @@
   "dependencies": {
     "botbuilder": "^4.0.0-preview1.2",
     "botbuilder-ai": "^4.0.0-preview1.2",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "fetch-ponyfill": "^6.0.2"
   }

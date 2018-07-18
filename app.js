@@ -1,14 +1,17 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-const express = require('express')
+const dotenv = require('dotenv');
+const express = require('express');
 const { BotFrameworkAdapter, ActivityTypes } = require('botbuilder');
 const { LuisRecognizer } = require('botbuilder-ai');
 
 const { GREETING, EXAMPLES } = require('./text');
 
-const luisAppId = '<YOUR-APP-ID>';
-const luisSubscriptionKey = '<YOUR-SUBSCRIPTION-KEY>';
+dotenv.load({path: `${__dirname}/.env`});
+
+const luisAppId = process.env.LUIS_APP_ID;
+const luisSubscriptionKey = process.env.LUIS_SUBSCRIPTION_KEY;
 const port = process.env.port || process.env.PORT || 3978;
 const luisServiceEndpoint = 'https://westus.api.cognitive.microsoft.com';
 
@@ -59,5 +62,8 @@ const botLogic = async (context) => {
 
 // Listen for incoming requests
 server.post('/api/messages', (req, res, next) => {
-    adapter.processActivity(req, res, botLogic).catch(next);
+    adapter.processActivity(req, res, botLogic).catch((err) => {
+        console.error("Sorry, something unexpected happened", err);
+        next(err);
+    });
 });
