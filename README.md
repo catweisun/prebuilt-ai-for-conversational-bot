@@ -17,7 +17,7 @@ Conversational AI is any system that interacts with users via natural language i
 1. Download repo contents
 
    - Create a local working directory which we'll refer to as `<working-dir>`
-   - Click the **download** button on the upper-right of this page, then click **Download ZIP**
+   - Click the **Clone or download** button on the upper-right of this page, then click **Download ZIP**
 
       ![download zip](screenshots/downloadzip-labelled-resized-66.png)
 
