@@ -15,6 +15,13 @@ const luisSubscriptionKey = process.env.LUIS_SUBSCRIPTION_KEY;
 const port = process.env.port || process.env.PORT || 3978;
 const luisServiceEndpoint = 'https://westus.api.cognitive.microsoft.com';
 
+if (luisAppId === '<YOUR-APP-ID>') {
+    throw new Error('LUIS_APP_ID not set. Please set in the .env file.');
+}
+if (luisSubscriptionKey === '<YOUR-SUBSCRIPTION-KEY>') {
+    throw new Error('LUIS_SUBSCRIPTION_KEY not set. Please set in the .env file.');
+}
+
 const model = new LuisRecognizer({
     appId: luisAppId,
     subscriptionKey: luisSubscriptionKey,
