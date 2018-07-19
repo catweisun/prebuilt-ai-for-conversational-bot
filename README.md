@@ -54,32 +54,42 @@ Conversational AI is any system that interacts with users via natural language i
 
 # Usage
 
-   Type the following sample sentences into the emulator to see the intents, confidence score, and entities for your published LUIS app.
+## See intents and entities
 
-   - Type **Show me all docs for Wipro**. You should see a response like:
-      > top intent: **FindDocForProject**<br>
-      > confidence score: **0.778712034**<br>
-      > entities: **project**=wipro
-   - Type **Show me all people with Java programming skills**. You should see a response like:
-      > top intent: **FindPeopleForProject**<br>
-      > confidence score: **0.9460903**<br>
-      > entities: **skill**=java
-   - Type **Show me all people who are free from September 2018 to November 2018**. You should see a response like:
-      > top intent: **FindPeopleForProjectWithTime**<br>
-      > confidence score: **0.9321173**<br>
-      > entities: **datetime**=(2018-09-01,2018-11-01,P2M); **number**=2018, 2018
-   - Type **How are you?** You should see a response like:
-      > top intent: **Greeting**<br>
-      > confidence score: **0.9368477**<br>
-      > entities: n/a
-   - Type **Help**. You should see a response like:
-      > top intent: **Help**<br>
-      > confidence score: **0.9752869**<br>
-      > entities: n/a
-   - Type **What is the weather like today?** You should see a response like:
-      > top intent: **None**<br>
-      > confidence score: **0.572350144**<br>
-      > entities: **datetime**=2018-07-18
+Type the following sample sentences into the emulator to see the intents, confidence score, and entities for your published LUIS app.
+
+- Type **Show me all docs for Wipro**. You should see a response like:
+  > top intent: **FindDocForProject**<br>
+  > confidence score: **0.778712034**<br>
+  > entities: **project**=wipro
+- Type **Show me all people with Java programming skills**. You should see a response like:
+  > top intent: **FindPeopleForProject**<br>
+  > confidence score: **0.9460903**<br>
+  > entities: **skill**=java
+- Type **Show me all people who are free from September 2018 to November 2018**. You should see a response like:
+  > top intent: **FindPeopleForProjectWithTime**<br>
+  > confidence score: **0.9321173**<br>
+  > entities: **datetime**=(2018-09-01,2018-11-01,P2M); **number**=2018, 2018
+- Type **How are you?** You should see a response like:
+  > top intent: **Greeting**<br>
+  > confidence score: **0.9368477**<br>
+  > entities: n/a
+- Type **Help**. You should see a response like:
+  > top intent: **Help**<br>
+  > confidence score: **0.9752869**<br>
+  > entities: n/a
+- Type **What is the weather like today?** You should see a response like:
+  > top intent: **None**<br>
+  > confidence score: **0.572350144**<br>
+  > entities: **datetime**=2018-07-18
+
+## Optimize LUIS model
+
+During the talk, we will explore some ways to optimize your LUIS model for the following sentences:
+
+- **Find me people with skill hdi**
+- **Show me docs for bmw**
+- **List me docs for bmw**
 
 # Contributing
 
