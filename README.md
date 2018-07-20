@@ -54,8 +54,6 @@ Conversational AI is any system that interacts with users via natural language i
 
 # Usage
 
-## See intents and entities
-
 Type the following sample sentences into the emulator to see the intents, confidence score, and entities for your published LUIS app.
 
 - Type **Show me all docs for Wipro**. You should see a response like:
@@ -83,9 +81,7 @@ Type the following sample sentences into the emulator to see the intents, confid
   > confidence score: **0.572350144**<br>
   > entities: **datetime**=2018-07-18
 
-## Optimize LUIS model
-
-During the talk, we will explore some ways to optimize your LUIS model for the following sentences:
+These are the samples sentences used during the talk about ways to optimize your LUIS model:
 
 - **Find me people with skill hdi**
 - **Show me docs for bmw**
