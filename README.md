@@ -81,7 +81,7 @@ Type the following sample sentences into the emulator to see the intents, confid
   > confidence score: **0.572350144**<br>
   > entities: **datetime**=2018-07-18
 
-These are the samples sentences used during the talk about ways to optimize your LUIS model:
+These are the sample sentences used during the talk about ways to optimize your LUIS model:
 
 - **Find me people with skill hdi**
 - **Show me docs for bmw**
